@@ -1,0 +1,12 @@
+table, th, td {
+    border: 1px solid black;
+    text-align: left;
+    vertical-align: center;
+   
+    background-color: #ccff99;
+}
+
+
+div.user_form {
+ align:center;
+}

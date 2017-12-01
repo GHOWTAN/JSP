@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns="http://java.sun.com/xml/ns/javaee"
+    xmlns:web="http://java.sun.com/xml/ns/javaee"
+    xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" id="WebApp_ID" version="3.0">
+ 
+   
+    <display-name>Example_44</display-name>
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+  </welcome-file-list>
+  <display-name>File Upload and Renaming Servlet</display-name>
+  <description>A servlet for uploading and renaming files.</description>
+  <context-param>
+    <param-name>upload_dir</param-name>
+    <param-value>
+  uploaded_files
+  </param-value>
+  </context-param>
+  <display-name>Servlet Demos</display-name>
+  <description>
+Servlet Demos.
+</description>
+  <servlet>
+    <servlet-name>MultipleFileUploadRenameServlet</servlet-name>
+    <servlet-class>servlet.MultipleFileUploadRenameServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>MultipleFileUploadRenameServlet</servlet-name>
+    <url-pattern>/multipleFileUploadRenameServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>DisplayErrorServlet</servlet-name>
+    <servlet-class>servlet.DisplayErrorServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>DisplayErrorServlet</servlet-name>
+    <url-pattern>/displayErrorServlet</url-pattern>
+  </servlet-mapping>
+ 
+ 
+  <error-page> 
+  <error-code>401</error-code>
+  <location>/displayErrorServlet</location>
+   </error-page>
+  
+    <error-page> 
+  <error-code>403</error-code>
+  <location>/displayErrorServlet</location>
+   </error-page>
+  
+     <error-page> 
+  <error-code>404</error-code>
+  <location>/displayErrorServlet</location>
+   </error-page>
+  
+    
+<error-page>
+    <exception-type>java.lang.Throwable</exception-type >
+    <location>/displayErrorServlet</location>
+</error-page>
+ 
+<error-page>
+    <exception-type>
+          javax.servlet.ServletException
+    </exception-type >
+    <location>/displayErrorServlet</location>
+</error-page>
+<error-page>
+    <exception-type>java.io.IOException</exception-type >
+    <location>/displayErrorServlet</location>
+</error-page>
+ 
+</web-app>
